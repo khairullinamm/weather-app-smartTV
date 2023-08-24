@@ -90,8 +90,10 @@ h6 {
 /*--------------------*/
 
 body {
-  height: 1080px;
-  weight: 1920px;
+  min-height: 1080px;
+  min-width: 1920px;
+  max-height: 1080px;
+  max-width: 1920px;
   background: #363636;
 }
 
@@ -311,6 +313,7 @@ input:focus {
 
 /*card*/
 .cards {
+  font-family: 'Roboto', sans-serif;
   display: flex;
   padding: 0 -5px;
 }
@@ -321,7 +324,7 @@ input:focus {
   position: relative;
   background: rgba(227, 227, 227, 0.5);
   border-radius: 32px;
-  max-width: 480px;
+  max-width: 485px;
   height: 320px;
   flex: 1 1 auto;
   margin-right: 78px;
@@ -329,32 +332,48 @@ input:focus {
 }
 
 .add_city:hover {
-outline: 5px solid #FFFFFF;
+/*outline: 5px solid #FFFFFF;*/
+border: 5px solid #FFFFFF;
 margin-top: 50px;
 }
-
+.add_city:focus {
+  border: 5px solid #FFFFFF;
+  margin-top: 50px;
+}
 .new_city1:hover {
-outline: 5px solid #FFFFFF;
+/*outline: 5px solid #FFFFFF;*/
+border: 5px solid #FFFFFF;
 margin-top: 50px;
+}
+.new_city1:focus {
+  border: 5px solid #FFFFFF;
+  margin-top: 50px;
 }
 .new_city2:hover {
-outline: 5px solid #FFFFFF;
-margin-top: 50px;
+/*outline: 5px solid #FFFFFF;*/
+  border: 5px solid #FFFFFF;
+  margin-top: 50px;
+}
+.new_city2:focus {
+ border: 5px solid #FFFFFF;
+  margin-top: 50px;
 }
 
 .new_city1,.new_city2{ 
   background: rgba(217, 217, 217, 0.75);
   border-radius: 32px;
-  max-width: 480px;
-  min-width: 480px;
+  max-width: 485px;
+  min-width: 485px;
   height: 320px;
   flex: 1 1 auto;
   margin-right: 78px;
   margin-top: 83px;
+  margin-left: 0px;
   position: relative;
 }
 .new_city1 {
   display: none;
+  position: relative;
 }
 .new_city2{
   display: none;
@@ -370,11 +389,13 @@ margin-top: 50px;
   line-height: 56px;
   color: #FFFFFF;
 }
-.lng-name_city1, .lng-name_city2 {
+.name_city1, .name_city2 {
   font-family: 'Roboto', sans-serif;
   font-size: 48px;
   line-height: 56px;
   color: #FFFFFF;
+  padding-left: 22px;
+  padding-top: 44px;
 }
 /* icon plus*/
 .plus {
@@ -391,4 +412,40 @@ margin-top: 50px;
   /*горизонатльно по середине род. блока*/
   left: 50%;
   margin-left: -20.5px;
+}
+.del1,
+.del2 :focus {
+  width: 41px;
+  height: 41px;
+  display: flex;
+  border: 1px solid #A50034;
+  box-shadow: 0 0 3px #A50034;
+  margin-top: 349px;
+  position: absolute;
+  /*горизонатльно по середине род. блока*/
+  left: 50%;
+  margin-left: -20.5px;
+}
+
+
+.city1_temp1,.city2_temp1 {
+  position: absolute;
+  top: 152px;
+  left: 22px;
+  font-size: 48px;
+  color: #ffff;
+}
+.city1_temp2, .city2_temp2 {
+  position: absolute;
+  top: 227px;
+  left: 22px;
+  font-size: 48px;
+  color: #E3E3E3;
+}
+.new_city1 img:first-child, .new_city2 img:first-child {
+  position: absolute;
+  top: 92px;
+  left: 238px;
+  width: 242px;
+  height: 242px;
 }
