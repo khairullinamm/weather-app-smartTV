@@ -1,0 +1,122 @@
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
+<!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+
+<head>
+	<!-- Заголовок страницы в браузере -->
+	<title>Add City</title>
+	<!--Adaptive-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<!--CSS page -->
+	<link rel="stylesheet" href="css/style.css" />
+	<!--CSS list with cities -->
+	<link rel="stylesheet" href="css/suggestions.min.css" />
+	<!--Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto&display=swap" rel="stylesheet">
+	<!--List with cities jquery and plugin suggestions-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.12.0/dist/js/jquery.suggestions.min.js"></script>
+
+	<!--Encoding-->
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div class="wrapper">
+		<select class="change-lang">
+			<option value="ru" selected>RU</option>
+			<option value="en">EN</option>
+		</select>
+		<div class="addcity_part" id="adding">
+			<header>
+				<h1 class=lng-unit>Add City</h1>
+			</header>
+			<section class="input-part">
+				<input id="city" name="city" type="text" autocomplete="off" />
+			</section>
+		</div>
+		<!----------switcher----------->
+		<div class="switch-btn" id="switch-btn-1"></div>
+		<!----------switcher------------>
+		<!--cмена состояния дисплея-->
+		<div class="weather_part" id="weather">
+			<p class="information"></p>
+			<!--для отображения инфы об ошибках и тд-->
+			<div class="header">
+				<h1 id="01" class="location">----</h1>
+				<img class="weather_icon" src="img/sun.png" alt="Weather Icon" , name="icon">
+			</div>
+			<div class="column_feels">
+				<div class="temp">
+					<span class="numb">--</span>
+					<span class="deg">°C</span>
+					<p class="weather_name">--</p>
+				</div>
+				<div class="second_feels">
+					<div class="high">
+						<span class="lng-High">High</span>
+						<div class="high_C">
+							<span class="niz">--</span>
+							<span class="pasc">°C</span>
+						</div>
+					</div>
+					<div class="Humidity">
+						<span class="lng-Humidity">Humidity</span>
+						<div class="Humidity_percent">
+							<span class="niz">--</span>
+							<span class="percent">%</span>
+						</div>
+					</div>
+					<div class="pressure">
+						<span class="lng-pressure">Pressure</span>
+						<div class="Pressure_hPa">
+							<span class="niz">--</span>
+							<span class="pasc">hPa</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cards" id="poopa">
+				<div class="add_city" id="add" tabindex="1">
+					<span class="lng-name_city">Add city</span>
+					<img class="plus" src="img/plus.png" id="bottom">
+				</div>
+				<div class="new_city1" id="city1" tabindex="2">
+					<img src="img/sun.png" alt="Weather Icon" , name="new_city1_icon" class="weather_icon_new">
+					<span class="name_city1">---</span>
+					<div class="city1_temp1">
+						<span class="niz">--</span>
+						<span class="pasc">°C</span>
+					</div>
+					<div class="city1_temp2">
+						<span class="niz">--</span>
+						<span class="pasc">°C</span>
+					</div>
+					<img src="img/krest.png" id="delete_card1" class="del1" tabindex="4">
+				</div>
+				<div class="new_city2" id="city2" tabindex="3">
+					<img src="img/sun.png" alt="Weather Icon" , name="new_city2_icon">
+					<span class="name_city2">---</span>
+					<div class="city2_temp1">
+						<span class="niz">--</span>
+						<span class="pasc">°C</span>
+					</div>
+					<div class="city2_temp2">
+						<span class="niz">--</span>
+						<span class="pasc">°C</span>
+					</div>
+					<img src="img/krest.png" id="delete_card2" class="del2" tabindex="5">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/lang.js"></script>
+	<script src="js/js2.js"></script>
+
+</body>
+
+</html>
