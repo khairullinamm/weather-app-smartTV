@@ -1,6 +1,6 @@
 # Weather app for SMART TV
 
-![Иллюстрация к проекту](img.png)
+![Иллюстрация к проекту](image.png)
 
 ## Description
 The project was created as part of an education practice at LG Electronics, Inc. The goal is to create a web application with a weather forecast for Smart TV.
