@@ -37,7 +37,7 @@ _Project is: in progress_
 5. Try to make select without jQuery.
 6. Fix problems with saved data in localStorage.
 7. Write commands for build and setup app at WebOS
-8. Improve design
+
 
 ## Contacts 
 [@milanahmm](https://t.me/milanahmm) - contact me!
