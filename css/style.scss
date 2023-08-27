@@ -1,0 +1,455 @@
+/*NULL STYLE*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  :focus,
+  :active {
+    outline: none;
+  }
+  
+  a:focus,
+  a:active {
+    outline: none;
+  }
+  
+  nav,
+  footer,
+  header,
+  aside {
+    display: block;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  input,
+  button,
+  textarea {
+    font-family: inherit;
+  }
+  
+  input::-ms-clear {
+    display: none;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  ul li {
+    list-style: none;
+  }
+  
+  img {
+    vertical-align: top;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  /*--------------------*/
+  
+  body {
+    height: 1080px;
+    width: 1920px;
+    background: #363636;
+  
+    font-family: 'Exo 2', sans-serif;
+  }
+  
+  /*---------SEARCH WINDOW----------*/
+  .container {
+    width: 1700px;
+    margin: 0 auto;
+  }
+  
+  .search__lang {
+    width: 200px;
+    height: 50px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 40px;
+    background-color: #363636;
+    color:  #fff;
+  }
+  
+  .search__localstorage {
+    width: 72px; 
+    height: 34px; 
+  
+    border-radius: 14px; 
+    background: #bfbfbf; 
+  
+    border: none;
+    cursor: pointer;
+  
+    position: relative;
+
+        &:after {
+    
+                content: "";
+                display: block;
+            
+                width: 34px;
+                height: 34px;
+            
+                border-radius: 34px; 
+                background: #fff; 
+            
+                box-shadow: 0 0 10px 0 #999999; 
+            
+                z-index: 1;
+            
+                position: absolute;
+                left: 0;
+            
+                transition-duration: 300ms; 
+        }
+    }
+  
+  .switch-on::after {
+    background: #118c4e;
+  
+    right: 0;
+    left: auto;
+  }
+  
+  
+  .title { 
+    text-align: center;
+  
+    color: #ffff;
+  
+    font-size: 96px;
+    line-height: 128px;
+  
+    margin-bottom: 50px;
+    margin-top: 200px;
+  }
+  
+  .search__input-wrapper
+  {
+      font-size:  40px;
+      padding-left: 350px;
+      padding-right: 350px;
+  
+  }
+  
+  .search__input {
+  
+    background: #FFFFFF;
+    border-radius: 64px;
+  
+    font-size: 72px;
+    
+    width: 992px;
+    height: 135px;
+
+    &:focus {
+        box-shadow: 2px 4px 60px 0px rgba(255, 255, 255, 0.4);
+    }
+  
+  }
+  
+  .search__tab {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  
+  /*-----WEATHER-PART----*/
+  
+  .weather_part {
+    min-height: 100%;
+    display: none;
+    flex-direction: column;
+  }
+  
+  
+  .input-part .information {
+    display: flex;
+    font-size: 17px;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+  }
+  
+  .input-part .information.error {
+    color: #721c24;
+    display: flex;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
+  
+  .input-part .information.pending {
+    color: #0c5460;
+    display: flex;
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+  }
+  
+  /*name of city + icon*/
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /*icon*/
+  .header img {
+    width: 473px;
+    height: 384px;
+    padding-right: 89px;
+  }
+  
+  /*name of city*/
+  .header .location {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 96px;
+    color: #ffff;
+    padding-left: 81px;
+  }
+  /******************************************************************************/
+  
+  /****************************************************************************************************8/
+  
+  /*main temperature*/
+  .temp {
+    font-family: 'Roboto', sans-serif;
+    font-size: 128px;
+    line-height: 150px;
+    color: #A50034;
+    padding-left: 81px;
+    justify-content: flex-start;
+    align-items: stretch;
+  
+  }
+  
+  .weather_name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 64px;
+    line-height: 70px;
+    color: #FFFFFF;
+  }
+  
+  
+  .column_feels {
+    font-family: 'Roboto', sans-serif;
+    font-size: 64px;
+    line-height: 75px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  
+  .second_feels {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+  
+  .high,
+  .pressure,
+  .Humidity {
+    display: flex;
+      flex-direction: column;
+      margin-right: 80px;
+      align-items: center;
+  }
+  
+  .high_C,
+  .Pressure_hPa,
+  .Humidity_percent {
+    font-size: 96px;
+    line-height: 112px;
+    color: #A50034;
+  }
+  
+  .pressure {
+    padding-right: 45px;
+    /*172-127*/
+  }
+  
+  /*---CARDS WITH CITIES---*/
+  
+  /*card*/
+  .cards {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    padding: 0 -5px;
+  }
+  .cards div:first-child {
+    margin-left: 69px;
+  } 
+  .add_city  {
+    position: relative;
+    background: rgba(227, 227, 227, 0.5);
+    border-radius: 32px;
+    max-width: 485px;
+    height: 320px;
+    flex: 1 1 auto;
+    margin-right: 78px;
+    margin-top: 83px;
+  }
+  
+  .add_city:hover {
+  /*outline: 5px solid #FFFFFF;*/
+  border: 5px solid #FFFFFF;
+  margin-top: 50px;
+  }
+  .add_city:focus {
+    border: 5px solid #FFFFFF;
+    margin-top: 50px;
+  }
+  .new_city1:hover {
+  /*outline: 5px solid #FFFFFF;*/
+  border: 5px solid #FFFFFF;
+  margin-top: 50px;
+  }
+  .new_city1:focus {
+    border: 5px solid #FFFFFF;
+    margin-top: 50px;
+  }
+  .new_city2:hover {
+  /*outline: 5px solid #FFFFFF;*/
+    border: 5px solid #FFFFFF;
+    margin-top: 50px;
+  }
+  .new_city2:focus {
+   border: 5px solid #FFFFFF;
+    margin-top: 50px;
+  }
+  
+  .new_city1,.new_city2{ 
+    background: rgba(217, 217, 217, 0.75);
+    border-radius: 32px;
+    max-width: 485px;
+    min-width: 485px;
+    height: 320px;
+    flex: 1 1 auto;
+    margin-right: 78px;
+    margin-top: 83px;
+    margin-left: 0px;
+    position: relative;
+  }
+  .new_city1 {
+    display: none;
+    position: relative;
+  }
+  .new_city2{
+    display: none;
+  }
+  
+  /*name of card*/
+  .lng-name_city {
+    position: absolute;
+    left: 147px;
+    bottom: 37px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    line-height: 56px;
+    color: #FFFFFF;
+  }
+  .name_city1, .name_city2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    line-height: 56px;
+    color: #FFFFFF;
+    padding-left: 22px;
+    padding-top: 44px;
+  }
+  /* icon plus*/
+  .plus {
+    position: absolute;
+    left: 154px;
+    bottom: 114px;
+  }
+  .del1,.del2 {
+    width: 41px;
+    height: 41px;
+    display: none;
+    margin-top: 349px;
+    position: absolute;
+    /*горизонатльно по середине род. блока*/
+    left: 50%;
+    margin-left: -20.5px;
+  }
+  .del1,
+  .del2 :focus {
+    width: 41px;
+    height: 41px;
+    display: flex;
+    border: 1px solid #A50034;
+    box-shadow: 0 0 3px #A50034;
+    margin-top: 349px;
+    position: absolute;
+    /*горизонатльно по середине род. блока*/
+    left: 50%;
+    margin-left: -20.5px;
+  }
+  
+  
+  .city1_temp1,.city2_temp1 {
+    position: absolute;
+    top: 152px;
+    left: 22px;
+    font-size: 48px;
+    color: #ffff;
+  }
+  .city1_temp2, .city2_temp2 {
+    position: absolute;
+    top: 227px;
+    left: 22px;
+    font-size: 48px;
+    color: #E3E3E3;
+  }
+  .new_city1 img:first-child, .new_city2 img:first-child {
+    position: absolute;
+    top: 92px;
+    left: 238px;
+    width: 242px;
+    height: 242px;
+  }

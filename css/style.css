@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*NULL STYLE*/
 * {
   padding: 0;
@@ -8,7 +9,6 @@
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -87,83 +87,110 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
 }
+
 /*--------------------*/
-
 body {
-  min-height: 1080px;
-  min-width: 1920px;
-  max-height: 1080px;
-  max-width: 1920px;
+  height: 1080px;
+  width: 1920px;
   background: #363636;
+  font-family: "Exo 2", sans-serif;
 }
 
-.wrapper {
-  min-height: 100%;
-  border-radius: 7px;
+/*---------SEARCH WINDOW----------*/
+.container {
+  width: 1700px;
+  margin: 0 auto;
 }
-.change-lang {
+
+.search__lang {
   width: 200px;
   height: 50px;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-size: 40px;
   background-color: #363636;
-  color:  #fff;
-  display: flex;
-
+  color: #fff;
 }
 
-.wrapper header { 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 405px;
-  color: #ffff;
-  font-family: 'Exo 2', sans-serif;
+.search__localstorage {
+  width: 72px;
+  height: 34px;
+  border-radius: 14px;
+  background: #bfbfbf;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.search__localstorage:after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 34px;
+  border-radius: 34px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px 0 #999999;
+          box-shadow: 0 0 10px 0 #999999;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.switch-on::after {
+  background: #118c4e;
+  right: 0;
+  left: auto;
+}
+
+.title {
+  text-align: center;
+  color: white;
   font-size: 96px;
   line-height: 128px;
-}
-.addcity_part {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  margin-bottom: 50px;
+  margin-top: 200px;
 }
 
-/*style of list of cities*/
-.input-part
-{
-    font-family: 'Exo 2', sans-serif;
-    font-size:  40px;
+.search__input-wrapper {
+  font-size: 40px;
+  padding-left: 350px;
+  padding-right: 350px;
 }
 
-/*style of only input*/
-input {
+.search__input {
   background: #FFFFFF;
   border-radius: 64px;
-  font-family: 'Exo 2', sans-serif;
   font-size: 72px;
-  min-width: 992px;
-  /*1080-88*/
+  width: 992px;
   height: 135px;
-  box-sizing: border-box;
+}
+.search__input:focus {
+  -webkit-box-shadow: 2px 4px 60px 0px rgba(255, 255, 255, 0.4);
+          box-shadow: 2px 4px 60px 0px rgba(255, 255, 255, 0.4);
 }
 
-
-input:focus {
-  box-shadow: 2px 4px 60px 0px rgba(255, 255, 255, 0.4);
+.search__tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-
 
 /*-----WEATHER-PART----*/
-
 .weather_part {
   min-height: 100%;
   display: none;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-
 .input-part .information {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 17px;
   text-align: center;
@@ -174,6 +201,8 @@ input:focus {
 
 .input-part .information.error {
   color: #721c24;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background: #f8d7da;
   border: 1px solid #f5c6cb;
@@ -181,16 +210,24 @@ input:focus {
 
 .input-part .information.pending {
   color: #0c5460;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background: #d1ecf1;
   border: 1px solid #bee5eb;
 }
 
 /*name of city + icon*/
-.header{
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /*icon*/
@@ -202,98 +239,79 @@ input:focus {
 
 /*name of city*/
 .header .location {
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-weight: 600;
   font-size: 96px;
-  color: #ffff;
+  color: white;
   padding-left: 81px;
 }
+
 /******************************************************************************/
-.switch-btn {
-  display: inline-block;
-  width: 72px; /* ширина переключателя */
-  height: 34px; /* высота переключателя */
-  border-radius: 14px; /* радиус скругления */
-  background: #bfbfbf; /* цвет фона */
-  z-index: 0;
-  margin: 0;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  bottom: 580px;
-  left: 1840px;
-  transition-duration: 300ms; /* анимация */
-}
-.switch-btn::after {
-  display: inline-block;
-  content: "";
-  height: 36px; /* высота кнопки */
-  width: 36px; /* ширина кнопки */
-  border-radius: 18px; /* радиус кнопки */
-  background: #fff; /* цвет кнопки */
-  top: -2px; /* положение кнопки по вертикали относительно основы */
-  left: -4px; /* положение кнопки по горизонтали относительно основы */
-  transition-duration: 300ms; /* анимация */
-  box-shadow: 0 0 10px 0 #999999; /* тень */
-  position: absolute;
-  z-index: 1;
-}
-.switch-on {
-  display: inline-block;
-  background: #fff;
-  box-shadow: inset 0 0 10px 0 #999999; /* тень */
-}
-.switch-on::after {
-  display: inline-blockx;
-  left: 30px;
-  background: #118c4e;
-}
 /****************************************************************************************************8/
 
 /*main temperature*/
 .temp {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 128px;
   line-height: 150px;
   color: #A50034;
   padding-left: 81px;
-  justify-content: flex-start;
-  align-items: stretch;
-
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .weather_name {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 64px;
   line-height: 70px;
   color: #FFFFFF;
 }
 
-
 .column_feels {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 64px;
   line-height: 75px;
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .second_feels {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: stretch;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .high,
 .pressure,
 .Humidity {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-    flex-direction: column;
-    margin-right: 80px;
-    align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .high_C,
@@ -310,72 +328,86 @@ input:focus {
 }
 
 /*---CARDS WITH CITIES---*/
-
 /*card*/
 .cards {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 0 -5px;
 }
+
 .cards div:first-child {
   margin-left: 69px;
-} 
-.add_city  {
+}
+
+.add_city {
   position: relative;
   background: rgba(227, 227, 227, 0.5);
   border-radius: 32px;
   max-width: 485px;
   height: 320px;
-  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   margin-right: 78px;
   margin-top: 83px;
 }
 
 .add_city:hover {
-/*outline: 5px solid #FFFFFF;*/
-border: 5px solid #FFFFFF;
-margin-top: 50px;
+  /*outline: 5px solid #FFFFFF;*/
+  border: 5px solid #FFFFFF;
+  margin-top: 50px;
 }
+
 .add_city:focus {
   border: 5px solid #FFFFFF;
   margin-top: 50px;
 }
+
 .new_city1:hover {
-/*outline: 5px solid #FFFFFF;*/
-border: 5px solid #FFFFFF;
-margin-top: 50px;
+  /*outline: 5px solid #FFFFFF;*/
+  border: 5px solid #FFFFFF;
+  margin-top: 50px;
 }
+
 .new_city1:focus {
   border: 5px solid #FFFFFF;
   margin-top: 50px;
 }
+
 .new_city2:hover {
-/*outline: 5px solid #FFFFFF;*/
+  /*outline: 5px solid #FFFFFF;*/
   border: 5px solid #FFFFFF;
   margin-top: 50px;
 }
+
 .new_city2:focus {
- border: 5px solid #FFFFFF;
+  border: 5px solid #FFFFFF;
   margin-top: 50px;
 }
 
-.new_city1,.new_city2{ 
+.new_city1, .new_city2 {
   background: rgba(217, 217, 217, 0.75);
   border-radius: 32px;
   max-width: 485px;
   min-width: 485px;
   height: 320px;
-  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   margin-right: 78px;
   margin-top: 83px;
   margin-left: 0px;
   position: relative;
 }
+
 .new_city1 {
   display: none;
   position: relative;
 }
-.new_city2{
+
+.new_city2 {
   display: none;
 }
 
@@ -384,26 +416,29 @@ margin-top: 50px;
   position: absolute;
   left: 147px;
   bottom: 37px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 48px;
   line-height: 56px;
   color: #FFFFFF;
 }
+
 .name_city1, .name_city2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 48px;
   line-height: 56px;
   color: #FFFFFF;
   padding-left: 22px;
   padding-top: 44px;
 }
+
 /* icon plus*/
 .plus {
   position: absolute;
   left: 154px;
   bottom: 114px;
 }
-.del1,.del2 {
+
+.del1, .del2 {
   width: 41px;
   height: 41px;
   display: none;
@@ -413,13 +448,17 @@ margin-top: 50px;
   left: 50%;
   margin-left: -20.5px;
 }
+
 .del1,
 .del2 :focus {
   width: 41px;
   height: 41px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border: 1px solid #A50034;
-  box-shadow: 0 0 3px #A50034;
+  -webkit-box-shadow: 0 0 3px #A50034;
+          box-shadow: 0 0 3px #A50034;
   margin-top: 349px;
   position: absolute;
   /*горизонатльно по середине род. блока*/
@@ -427,14 +466,14 @@ margin-top: 50px;
   margin-left: -20.5px;
 }
 
-
-.city1_temp1,.city2_temp1 {
+.city1_temp1, .city2_temp1 {
   position: absolute;
   top: 152px;
   left: 22px;
   font-size: 48px;
-  color: #ffff;
+  color: white;
 }
+
 .city1_temp2, .city2_temp2 {
   position: absolute;
   top: 227px;
@@ -442,6 +481,7 @@ margin-top: 50px;
   font-size: 48px;
   color: #E3E3E3;
 }
+
 .new_city1 img:first-child, .new_city2 img:first-child {
   position: absolute;
   top: 92px;

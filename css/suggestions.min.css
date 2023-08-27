@@ -1,8 +1,7 @@
 .suggestions-nowrap{white-space:nowrap}
-.suggestions-input{-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;width:952px/**/}
 .suggestions-input::-ms-clear{display:none}
 .suggestions-wrapper{position:relative;padding-top:0;vertical-align:top;-webkit-text-size-adjust:100%}
-.suggestions-suggestions{margin:0px 25px; /*margins from input*/background:#fff;border-top: 1px solid #000; /*contour near input*/-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;cursor:default;left:0;min-width:952px/**/;position:absolute;z-index:9999;-webkit-text-size-adjust:100%}
+.suggestions-suggestions{background:#fff;border-top: 1px solid #000; /*contour near input*/-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;cursor:default;left:0;min-width:952px/**/;position:absolute;z-index:9999;-webkit-text-size-adjust:100%}
 .suggestions-suggestions strong{font-weight:400;color:#A50034;/*color when letters match*/}
 .suggestions-suggestions.suggestions-mobile{border-style:none}
 .suggestions-suggestions.suggestions-mobile .suggestions-suggestion{border-bottom:1px solid #ddd}

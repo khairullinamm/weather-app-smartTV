@@ -1,14 +1,13 @@
 /*assign class values to const and variables*/
-const wrapper = document.querySelector(".wrapper");
-var input_part = document.querySelector(".input-part");
-var weather_part = wrapper.querySelector(".weather_part");
+
+var input_field = document.querySelector(".search__input");
+var weather_part = document.querySelector(".weather_part");
 var icon = weather_part.querySelector('img[name="icon"]');
 var icon_ls = weather_part.querySelector('img[name="icon"]');
 var icon_newcity1 = weather_part.querySelector('img[name="new_city1_icon"]');
 var icon_newcity2 = weather_part.querySelector('img[name="new_city2_icon"]');
 var loc = weather_part.querySelector(".location");
-var input_field = input_part.querySelector("input");
-var head = wrapper.querySelector("header");
+//var head = wrapper.querySelector("header");
 var information = weather_part.querySelector("information");
 let count = 0; //положение карточек
 var flag_card = 0; //какую карточку добавили
@@ -96,12 +95,13 @@ $("#city").suggestions({
 let lang = select.value;
 input_field.addEventListener("keydown", function (event) {
   if (event.code == "Enter" && input_field.value != "") {
-    let LangBlock = document.querySelector('.change-lang');
+    let LangBlock = document.querySelector('.search__lang');
     LangBlock.style.display = 'none';
-    let CityBlock = document.querySelector('.addcity_part');
+    let CityBlock = document.querySelector('.search__input');
     CityBlock.style.display = 'none';
     let WeatherBlock = document.querySelector('.weather_part');
     WeatherBlock.style.display = 'flex';
+    document.querySelector('.title').style.display = 'none';
     requestApi(input_field.value, lang);
   }
 });
@@ -112,10 +112,11 @@ function doBack() {
   document.getElementById('delete_card1').style.display = 'none';
   document.getElementById('delete_card2').style.display = 'none';
   var x = new Boolean(true)
-  let CityBlock = document.querySelector('.addcity_part');
+  let CityBlock = document.querySelector('.search__input');
   CityBlock.style.display = 'flex';
   let WeatherBlock = document.querySelector('.weather_part');
   WeatherBlock.style.display = 'none';
+  document.querySelector('.title').style.display = 'block';
   if (x == true)
     webOS.platformBack();
 }
@@ -123,9 +124,9 @@ function doBack() {
 function doOk() {
   document.getElementById('delete_card1').style.display = 'none';
   document.getElementById('delete_card2').style.display = 'none';
-  let LangBlock = document.querySelector('.change-lang');
+  let LangBlock = document.querySelector('.search__lang');
   LangBlock.style.display = 'none';
-  let CityBlock = document.querySelector('.addcity_part');
+  let CityBlock = document.querySelector('.search__input');
   CityBlock.style.display = 'none';
   let WeatherBlock = document.querySelector('.weather_part');
   WeatherBlock.style.display = 'flex';
@@ -636,14 +637,14 @@ var update_interval = setInterval(requestApi,300000,city,lang);
       $('#switch-btn-1').on('on.switch', function swtch () {
         
 
-        
+        document.querySelector('.search__tab').style.justifyContent = 'flex-end';
         console.log ("old = ",lang_old);
         console.log ("new = ",lang);
         //убираем на экране кнопку смену языков
-        let LangBlock = document.querySelector('.change-lang');
+        let LangBlock = document.querySelector('.search__lang');
         LangBlock.style.display = 'none';  
 
-        let Block1 = document.querySelector('.addcity_part');
+        let Block1 = document.querySelector('.search__input');
         Block1.style.display = 'none';  
         let Block2 = document.querySelector('.weather_part');
         Block2.style.display = 'flex'; 
@@ -932,14 +933,15 @@ var update_interval = setInterval(requestApi,300000,city,lang);
         }
       });
 
-      $('.switch-btn').on('off.switch', function swtch () 
+      $('.search__localstorage').on('off.switch', function swtch () 
       {
         /*смена экранов*/
-        let Block1 = document.querySelector('.addcity_part');
+        let Block1 = document.querySelector('.search__input');
         Block1.style.display = 'none';
         let Block2 = document.querySelector('.weather_part');
         Block2.style.display = 'flex';    
       });
+
       if (lang == 'ru')
       {
         localStorage.setItem('lang',JSON.stringify('ru'));
@@ -955,11 +957,14 @@ var button = document.querySelector(".plus");
   button.addEventListener("click", function() {
     console.log ("dop = ",lang);
     //переходим на блок ввода города
+  
     let WeatherBlock = document.querySelector('.weather_part');
     WeatherBlock.style.display = 'none';
-    let CityBlock= document.querySelector('.addcity_part');
+    let CityBlock= document.querySelector('.search__input');
+    CityBlock.value = ''; 
     CityBlock.style.display = 'flex'; 
 
+    document.querySelector('.title').style.display = 'block';
     let NewCity_1 = document.getElementById('city1');
     let NewCity_2 = document.getElementById('city2');
     let AddCity = document.getElementById('add');
