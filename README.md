@@ -5,7 +5,7 @@
 ## Description
 The project was created as part of an education practice at LG Electronics, Inc. The goal is to create a web application with a weather forecast for Smart TV.
 
-__The project was created during practice, so it was not uploaded to github in a timely manner. I plan to improve the project and rewrite the main part of the code (see TODO)_
+_The project was created during practice, so it was not uploaded to github in a timely manner. I plan to improve the project and rewrite the main part of the code (see TODO)_
 
 **The project is available at the link**: https://khairullinamm.github.io/weather-app-smartTV/#ru
 
