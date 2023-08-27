@@ -36,7 +36,7 @@ _Project is: in progress_
 2. Finish the presence of two languages in the application; at the moment, the display is incorrect.
 3. Finish the functionality for navigation with a television remote control.
 4. Make code refactoring.
-5. Try to make select without jQuery.
+5. Delete jQuery
 6. Fix problems with saved data in localStorage.
 7. Write commands for build and setup app at WebOS
 
